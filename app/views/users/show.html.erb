@@ -1,0 +1,39 @@
+<% content_for :title do %>Profile <%= @user.name %><% end %>
+<main id="main" class="main-page">
+  <!-- ======= Speaker Details Sectionn ======= -->
+  <section id="speakers-details">
+    <div class="container">
+        <% if flash[:notice].present? %>
+          <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+        <% end %>
+      <div class="section-header">
+        <h2>Profile</h2>
+        <p>Let's take a look what we have here <%= link_to '', edit_user_path(@user), class: 'bi bi-pen' %></p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= image_tag 'speakers/1.jpg', class:'img-fluid', alt: "#{@user.name} photo" %>
+        </div>
+
+        <div class="col-md-6">
+          <div class="details">
+            <h2><%= @user.name %></h2>
+            <div class="social">
+              <a href=""><i class="bi bi-twitter"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
+
+            <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+</main><!-- End #main -->

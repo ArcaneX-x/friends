@@ -1,17 +1,19 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for @user, html: {multipart: true} do |f| %>
+ <div class="row php-email-form">
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
+
+   <div class="form-group mt-3">
+    <%= f.text_field :name, class: 'form-control', placeholder:'Your name' %>
+   </div>
+
+    <div class="form-group mt-3">
+     <%= f.text_field :email, class: 'form-control', placeholder:'Your email' %>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <div class="form-group mt-3">
+      <button type="submit">Update</button>
+      <%= link_to 'Back', :back %>
+    </div>
+ </div>
 <% end %>

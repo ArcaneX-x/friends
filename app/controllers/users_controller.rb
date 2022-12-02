@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update ]
 
-
   # GET /users/1
   def show
   end
@@ -28,6 +27,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:users).permit(:name, :email)
+      params.require(:user).permit(:name, :email)
     end
 end

@@ -1,10 +1,24 @@
-<h1>Editing user</h1>
+<main id="main" class="main-page">
+  <!-- ======= Speaker Details Sectionn ======= -->
+  <section id="contact" class="section-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2>Editing Profile</h2>
+        <p>Change whatever you want</p>
+      </div>
 
-<%= render "form", user: @user %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= image_tag 'speakers/1.jpg', class:'img-fluid', alt: "#{@user.name} photo" %>
+        </div>
 
-<br>
+        <div class="col-md-6">
+          <div class="details">
+            <%= render 'form' %>
+          </div>
+        </div>
 
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
-</div>
+      </div>
+    </div>
+  </section>
+</main><!-- End #main -->
