@@ -33,19 +33,6 @@
     </div>
   </section><!-- End About Section -->
 
-
-<!--  <h1>События</h1>-->
-
-<!--  <div class="buffer-both">-->
-    <%#= link_to 'Создать событие', new_event_path, class: 'btn btn-success' %>
-<!--  </div>-->
-
-<!--  <div class="row buffer-bottom">-->
-    <%# Рендерим сразу массив событий, каждый в паршиале 'events/event' %>
-    <%#= render partial: 'events/event', collection: @events %>
-<!--  </div>-->
-
-
   <!-- ======= Schedule Section ======= -->
   <section id="schedule" class="section-with-bg">
     <div class="container" data-aos="fade-up">
@@ -54,178 +41,14 @@
         <p>Here is our event schedule</p>
       </div>
 
-      <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
-        <li class="nav-item">
-          <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Day 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 2</a>
-        </li>
-      </ul>
-
       <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
         necessitatibus voluptatem quis labore perspiciatis quia.</h3>
 
       <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-
-        <!-- Schdule Day 1 -->
-        <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>09:30 AM</time></div>
-            <div class="col-md-10">
-              <h4>Registration</h4>
-              <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>10:00 AM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/1.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Keynote <span>Brenden Legros</span></h4>
-              <p>Facere provident incidunt quos voluptas.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>11:00 AM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/2.jpg', alt:'Hubert Hirthe' %>
-              </div>
-              <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-              <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>12:00 AM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/3.jpg', alt:'Hubert Hirthe' %>
-              </div>
-              <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-              <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>02:00 PM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/4.jpg', alt:'Hubert Hirthe' %>
-              </div>
-              <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-              <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>03:00 PM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/5.jpg', alt:'Hubert Hirthe' %>
-              </div>
-              <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-              <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>04:00 PM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/6.jpg', alt:'Hubert Hirthe' %>
-              </div>
-              <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-              <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-            </div>
-          </div>
-
-        </div>
-        <!-- End Schdule Day 1 -->
-
-        <!-- Schdule Day 2 -->
-        <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>10:00 AM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/1.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-              <p>Facere provident incidunt quos voluptas.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>11:00 AM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/2.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-              <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>12:00 AM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/3.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-              <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>02:00 PM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/4.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-              <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>03:00 PM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/5.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-              <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-            </div>
-          </div>
-
-          <div class="row schedule-item">
-            <div class="col-md-2"><time>04:00 PM</time></div>
-            <div class="col-md-10">
-              <div class="speaker">
-                <%= image_tag 'speakers/6.jpg', alt:'Brenden Legros' %>
-              </div>
-              <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-              <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-            </div>
-          </div>
-
-        </div>
-        <!-- End Schdule Day 2 -->
-
+        <%= render partial: 'events/event', collection: @events %>
       </div>
-
-    </div>
-
+        </div>
   </section><!-- End Schedule Section -->
-
 
 
   <!-- ======= Speakers Section ======= -->
@@ -363,63 +186,64 @@
       <div class="row g-0">
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/1.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/1.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/1.jpg', class:"img-fluid"),
+                        path_to_image('gallery/1.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/2.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/2.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/2.jpg', class:"img-fluid"),
+                        path_to_image('gallery/2.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/3.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/3.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/3.jpg', class:"img-fluid"),
+                        path_to_image('gallery/3.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/4.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/4.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/4.jpg', class:"img-fluid"),
+                        path_to_image('gallery/4.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
+        </div>
         </div>
 
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/5.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/5.jpg'), class:'glightbox',
-                        data: {gall:"venue-gallery"} %>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-          <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/6.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/6.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/5.jpg', class:"img-fluid"),
+                        path_to_image('gallery/5.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/7.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/7.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/6.jpg', class:"img-fluid"),
+                        path_to_image('gallery/6.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-4">
           <div class="venue-gallery">
-            <%= link_to image_tag('venue-gallery/7.jpg', class:"img-fluid"),
-                        path_to_image('venue-gallery/7.jpg'), class:'glightbox',
+            <%= link_to image_tag('gallery/7.jpg', class:"img-fluid"),
+                        path_to_image('gallery/7.jpg'), class:'glightbox',
+                        data: {gall:"venue-gallery"} %>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="venue-gallery">
+            <%= link_to image_tag('gallery/8.jpg', class:"img-fluid"),
+                        path_to_image('gallery/8.jpg'), class:'glightbox',
                         data: {gall:"venue-gallery"} %>
           </div>
         </div>

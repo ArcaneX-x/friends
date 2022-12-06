@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @event %>
-
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
-</div>
+<% content_for :title do %>Event -  <%= @event.title %>
+<% end %>
+<!-- ======= Show Details Section ======= -->
+<section id="speakers-details">
+  <div class="container">
+    <div class="section-header">
+      <h2><%= @event.title %></h2>
+      <p>Let's take a look what we have here
+        <% if current_user_can_edit?(@event) %>
+          <%= link_to '', edit_event_path(@event), class: 'bi bi-pen' %></p>
+        <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= image_tag 'speakers/1.jpg', class: 'img-fluid', alt: "#{@event.title} photo" %>
+      </div>
+      <div class="col-md-6">
+        <div class="details">
+          <h2><%= @event.datetime %></h2>
+          <p><%= @event.description %></p>
+          <h3><small><%= link_to @event.address,
+                                 "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

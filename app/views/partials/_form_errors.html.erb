@@ -1,11 +1,21 @@
-<% errors = model.errors %>
+<%# errors = model.errors %>
 
- <% if errors.any? %>
-  <div style="color: red">
-    <ul>
-  <% errors.each do |error| %>
-        <li><%= error.full_message %></li>
+ <%# if errors.any? %>
+<!--  <div style="color: red">-->
+<!--    <ul>-->
+  <%# errors.each do |error| %>
+<!--        <li><%#= error.full_message %></li>-->
+  <%# end %>
+<!--    </ul>-->
+<!--  </div>-->
+<%# end %>
+
+
+<main id="main" class="main-page">
+  <% if flash[:notice].present? %>
+    <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
   <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if flash[:alert].present? %>
+    <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+  <% end %>
+</main>

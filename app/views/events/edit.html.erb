@@ -1,8 +1,22 @@
-<h1>Editing event</h1>
+  <!-- ======= Event Details Section ======= -->
+  <section id="contact" class="section-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2>Editing Event</h2>
+        <p>Change whatever you want</p>
+      </div>
 
-<%= render "form", event: @event %>
+      <div class="row">
+        <div class="col-md-6">
+          <%#= image_tag 'speakers/1.jpg', class:'img-fluid', alt: "#{@user.name} photo" %>
+        </div>
 
-<div>
-  <%= link_to "Show this event", @event %> |
-  <%= link_to "Back to events", events_path %>
-</div>
+        <div class="col-md-6">
+          <div class="details">
+            <%= render 'form' %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

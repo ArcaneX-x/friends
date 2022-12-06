@@ -1,15 +1,12 @@
-<%# Паршиал для отображения инфы об отдельном событии %>
-<div class="col-sm-6 col-md-4">
-  <div class="thumbnail">
-
-    <div class="thumbnail-inner event-info-inner">
-      <div class="caption">
-        <div class="event-description">
-          <h3><%= link_to event.title, event_path(event) %></h3>
-          <h3><small><%= event.datetime %></small></h3>
-          <div class="buffer-both"><%= event.address %></div>
-        </div>
-      </div>
+<div class="row schedule-item">
+  <div class="col-md-2">
+    <p><%= event.datetime %></p>
+  </div>
+  <div class="col-md-10">
+    <div class="speaker">
+      <%#= image_tag 'speakers/1.jpg', alt:'Brenden Legros' %>
     </div>
+    <h4><%= link_to event.title, event_path(event) %><span> | <%= event.address %></span></h4>
+    <p><%= event.description  %></p>
   </div>
 </div>

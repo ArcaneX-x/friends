@@ -1,19 +1,19 @@
-<% content_for :title do %>Profile <%= @user.name %><% end %>
+<% content_for :title do %>Profile <%= @user.name %>
+<% end %>
 <main id="main" class="main-page">
   <!-- ======= Speaker Details Sectionn ======= -->
   <section id="speakers-details">
     <div class="container">
-        <% if flash[:notice].present? %>
-          <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
-        <% end %>
       <div class="section-header">
         <h2>Profile</h2>
-        <p>Let's take a look what we have here <%= link_to '', edit_user_path(@user), class: 'bi bi-pen' %></p>
-      </div>
-
+        <p>Let's take a look what we have here
+          <% if @user == current_user %>
+            <%= link_to '', edit_user_path(@user), class: 'bi bi-pen' %></p>
+          <% end %>
+          </div>
       <div class="row">
         <div class="col-md-6">
-          <%= image_tag 'speakers/1.jpg', class:'img-fluid', alt: "#{@user.name} photo" %>
+          <%= image_tag user_avatar(@user), class: 'img-fluid', alt: "#{@user.name} photo" %>
         </div>
 
         <div class="col-md-6">
@@ -25,9 +25,15 @@
               <a href=""><i class="bi bi-instagram"></i></a>
               <a href=""><i class="bi bi-linkedin"></i></a>
             </div>
-            <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
-
-            <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p>
+            <p><% if @user.events.any? %>
+              <h3>Organized:</h3>
+              <div class="row">
+                <%= render partial: 'events/event', collection: @user.events %>
+              </div>
+            <% else %>
+              <p class="buffer-top">User has not yet created an event.</p>
+            <% end %>
+            </p>
           </div>
         </div>
 
@@ -37,3 +43,5 @@
   </section>
 
 </main><!-- End #main -->
+
+
