@@ -6,3 +6,4 @@
 //= link vendor/glightbox/js/glightbox.min.js
 //= link vendor/swiper/swiper-bundle.min.js
 //= link vendor/bootstrap/js/bootstrap.bundle.min.js
+//= require rails-ujs

@@ -1,5 +1,5 @@
 module ApplicationHelper
   def user_avatar(user)
-    asset_path('speakers/1.jpg')
+    asset_path('avatar.png')
   end
 end

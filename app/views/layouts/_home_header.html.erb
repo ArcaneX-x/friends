@@ -1,25 +1,24 @@
-<!-- ======= Header ======= -->
+<!-- ======= Home Header ======= -->
 <header id="header" class="d-flex align-items-center ">
   <div class="container-fluid container-xxl d-flex align-items-center">
 
     <div id="logo" class="me-auto">
-      <!-- Uncomment below if you prefer to use a text logo -->
-      <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
+      <h1 style="font-size: 18px"><a href="/">The<span>Event</span></a></h1>
 
-      <%= link_to image_tag('logo.png'), root_path, class: 'scrollto' %>
+      <%#= link_to image_tag('logo.png'), root_path, class: 'scrollto' %>
     </div>
 
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About</a></li>
-        <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
         <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+        <li><a class="nav-link scrollto" href="#speakers">Friends</a></li>
         <li><a class="nav-link scrollto" href="#venue">Venue</a></li>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="nav-link scrollto" href="#subscribe">Contact</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+    </nav>
 
     <% if user_signed_in? %>
       <%= link_to 'Profile', current_user, class: 'buy-tickets scrollto' %>

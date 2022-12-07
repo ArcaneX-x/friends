@@ -1,8 +1,8 @@
 <div class="row schedule-item">
-  <div class="col-md-2">
-    <p><%= event.datetime %></p>
+  <div class="col-md-4">
+    <p><%= l event.datetime, format: :long %></p>
   </div>
-  <div class="col-md-10">
+  <div class="col-md-6">
     <div class="speaker">
       <%#= image_tag 'speakers/1.jpg', alt:'Brenden Legros' %>
     </div>

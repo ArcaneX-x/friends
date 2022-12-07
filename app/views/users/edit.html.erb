@@ -1,25 +1,34 @@
-<main id="main" class="main-page">
-  <!-- ======= Speaker Details Sectionn ======= -->
-  <section id="speakers-details" class="section-bg">
-    <div class="container">
-      <div class="section-header">
-        <h2>Editing Profile</h2>
-        <p>Change whatever you want</p>
-      </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <%= image_tag 'speakers/1.jpg', class:'img-fluid', alt: "#{@user.name} photo" %>
-        </div>
-
-        <div class="col-md-6">
-          <div class="details">
-            <%= render 'form' %>
-            <%= link_to 'Change password', edit_user_registration_path %>
-          </div>
-        </div>
-
-      </div>
+<% content_for :title do %>Edit Profile <%= @user.name %>
+<% end %>
+<div class="container px-4 p-5 text-center">
+  <div class="section-header">
+    <h2>Profile</h2>
+    <% if @user == current_user %>
+      <p><%= link_to 'Edit profile', edit_user_path(@user) %></p>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-auto">
+      <h3>Editing profile</h3>
+      <%= render 'form' %></br>
+      <p><%= link_to 'Change password / Delete account', edit_user_registration_path %></p>
     </div>
-  </section>
-</main><!-- End #main -->
+    <div class="col">
+      <% if @user.events.any? %>
+        <section id="schedule" class="section-with-bg">
+          <div class="container" data-aos="fade-up">
+              <h3>Events Schedule by <%= @user.name %></h3>
+            <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+              <%= render partial: 'events/event', collection: @user.events %>
+            </div>
+          </div>
+        </section>
+      <% else %>
+        <h3 class="buffer-top"><%= @user.name %> has not yet created an event.</h3>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

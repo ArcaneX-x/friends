@@ -9,7 +9,8 @@ class EventsController < ApplicationController
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.where('datetime > ?', Time.current)
+    @next_event = Event.where('datetime > ?', Time.current + 6.days).first
   end
 
   def show

@@ -1,19 +1,16 @@
 <%= form_for @user, html: { multipart: true } do |f| %>
-  <div class="row php-email-form">
-
     <%= render partial: 'partials/form_errors', locals: { model: @user } %>
-
-    <div class="form-group mt-3">
+    <div class="mb-3">
       <%= f.text_field :name, class: 'form-control', placeholder: 'Your name' %>
     </div>
-
-    <div class="form-group mt-3">
+    <div class="mb-3">
       <%= f.text_field :email, class: 'form-control', placeholder: 'Your email' %>
     </div>
-
-    <div class="form-group mt-3">
-      <button type="submit">Update</button>
+    <div class="mb-3">
+      <%= f.submit "Update", class: "form-button text-center" %>
       <%= link_to 'Back', :back %>
     </div>
-  </div>
 <% end %>
+
+
+

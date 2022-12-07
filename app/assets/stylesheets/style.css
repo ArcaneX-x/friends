@@ -31,6 +31,7 @@ a:focus {
 p {
   padding: 0;
   margin: 0 0 30px 0;
+  font-size: 19px;
 }
 
 h1,
@@ -135,15 +136,6 @@ h6 {
   background-color: #f6f7fd;
 }
 
-.butt {
-  background: #f82249;
-  border: 0;
-  padding: 10px 40px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 50px;
-  cursor: pointer;
-}
 
 /*--------------------------------------------------------------
 # Header
@@ -261,7 +253,7 @@ h6 {
   color: rgba(202, 206, 221, 0.8);
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   white-space: nowrap;
   transition: 0.3s;
   position: relative;
@@ -322,13 +314,13 @@ h6 {
 
 .navbar .dropdown ul a {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: none;
   color: #060c22;
 }
 
 .navbar .dropdown ul a i {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .navbar .dropdown ul a:hover,
@@ -487,7 +479,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(hero-bg.jpg) top center;
+  background: url(event-bg.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -705,7 +697,7 @@ h6 {
 }
 
 #about h2 {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #fff;
@@ -722,7 +714,7 @@ h6 {
 }
 
 #about p {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 20px;
   color: #fff;
   position: relative;
@@ -970,7 +962,7 @@ h6 {
 }
 
 #venue .venue-info {
-  background: url("venue-info-bg.jpg") top center no-repeat;
+  background: url("event-bg.jpg") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 60px;
@@ -1227,15 +1219,16 @@ h6 {
 --------------------------------------------------------------*/
 #subscribe {
   padding: 60px;
-  background: url(subscribe-bg.jpg) center center no-repeat;
-  background-size: cover;
-  overflow: hidden;
+  /*background-color: white;*/
+  /*background: url(subscribe-bg.jpg) center center no-repeat;*/
+  /*background-size: cover;*/
+  /*overflow: hidden;*/
   position: relative;
 }
 
 #subscribe:before {
   content: "";
-  background: rgba(6, 12, 34, 0.6);
+  background: #f6f7fd;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -1251,7 +1244,7 @@ h6 {
 
 #subscribe .section-header h2,
 #subscribe p {
-  color: #fff;
+  color: #000;
 }
 
 #subscribe input {
@@ -1431,7 +1424,7 @@ h6 {
   }
 }
 
-#contact .php-email-form .error-message {
+#contact .form-control .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1440,11 +1433,11 @@ h6 {
   font-weight: 600;
 }
 
-#contact .php-email-form .error-message br+br {
+#contact .form-control .error-message br+br {
   margin-top: 25px;
 }
 
-#contact .php-email-form .sent-message {
+#contact .form-control .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1453,14 +1446,14 @@ h6 {
   font-weight: 600;
 }
 
-#contact .php-email-form .loading {
+#contact .form-control .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-#contact .php-email-form .loading:before {
+#contact .form-control .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1473,27 +1466,27 @@ h6 {
   animation: animate-loading 1s linear infinite;
 }
 
-#contact .php-email-form input,
-#contact .php-email-form textarea {
+#contact .form-control input,
+#contact .form-control textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-#contact .php-email-form input:focus,
-#contact .php-email-form textarea:focus {
+#contact .form-control input:focus,
+#contact .form-control textarea:focus {
   border-color: #f82249;
 }
 
-#contact .php-email-form input {
+#contact .form-control input {
   padding: 10px 15px;
 }
 
-#contact .php-email-form textarea {
+#contact .form-control textarea {
   padding: 12px 15px;
 }
 
-#contact .php-email-form button[type=submit] {
+#contact .form-control button[type=submit] {
   background: #f82249;
   border: 0;
   padding: 10px 40px;
@@ -1503,7 +1496,7 @@ h6 {
   cursor: pointer;
 }
 
-#contact .php-email-form button[type=submit]:hover {
+#contact .form-control button[type=submit]:hover {
   background: #e0072f;
 }
 
@@ -1525,6 +1518,34 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+.form-button {
+  border: 0;
+  padding: 9px 25px;
+  cursor: pointer;
+  background: #f82249;
+  color: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+  font-size: 14px;
+  border-radius: 50px;
+}
+.form-button:hover {
+  color: #fff;
+  background: #dc3545;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #f82249;
+  outline: 0;
+  box-shadow: none
 }
 
 /*--------------------------------------------------------------

@@ -1,33 +1,38 @@
 <!-- ======= Log in ======= -->
-<section id="speakers-details" class="section-bg">
-  <div class="container text-center">
-    <div class="section-header">
-      <h2>Log in</h2>
-    </div>
-    <div class="php-email-form">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group mt-3">
-          <%= f.label :email %><br/>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-
-        <div class="form-group mt-3">
-          <%= f.label :password %><br/>
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
-          <div class="form-group mt-3">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end %>
-
-        <div class="form-group mt-3">
-          <%= f.submit "Log in", class:"butt" %>
-        </div>
-      <% end %>
-      <p style="font-size: 13px; margin-top: 10px; margin-bottom: 5px"><%= render "devise/shared/links" %></p>
-    </div>
+<div class="container px-4 p-5">
+  <div class="section-header">
+    <h2>Log in</h2>
   </div>
-</section>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="mb-3">
+          <%= f.label :email, class: "form-label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password, class: "form-label" %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br/>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group mt-3">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <%= f.submit "Log in", class: "form-button text-center" %>
+        </div>
+        <p style="font-size: 13px; margin-top: 10px; margin-bottom: 5px"><%= render "devise/shared/links" %></p>
+      <% end %>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
