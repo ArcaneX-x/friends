@@ -3,9 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :events,
-           class_name: 'Event',
-           foreign_key: :user_id,
-           inverse_of: :user,
+           # :comments,
            dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 35}

@@ -2,13 +2,15 @@
 <% end %>
 <section id="speakers-details">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header text-center">
       <h2><%= @event.title %></h2>
-      <p>
-        <% if current_user_can_edit?(@event) %>
+      <% if current_user_can_edit?(@event) %>
           <%= link_to 'Edit event', edit_event_path(@event) %>
-        <% end %>
-      </p>
+        <div class="d-grid gap-2 col-2 mx-auto">
+          <%= button_to 'Delete', @event, method: :delete,
+                        form: { data: { turbo_confirm: "are you sure?" } }, class: "btn btn-outline-danger" %>
+        </div>
+      <% end %>
     </div>
     <div class="row">
       <div class="col-md-6">

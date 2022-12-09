@@ -8,3 +8,10 @@ en:
       updated: "Users was successfully updated"
       created: "Users was successfully created"
       destroyed: "Users was successfully destroyed"
+  views:
+    interaction:
+      delete: "Delete"
+    event:
+      delete: "Event was successfully deleted"
+      are_you_sure: "Are you sure you want to delete"
+
