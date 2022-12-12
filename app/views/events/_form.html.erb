@@ -24,3 +24,6 @@
     <%= link_to 'Back', :back, class: 'text-center' %>
   </div>
 <% end %>
+<div class="details"><%= button_to 'Delete', @event, method: :delete,
+                                   form: { data: { turbo_confirm: "are you sure?" } }, class: "btn btn-outline-danger" %>
+</div>

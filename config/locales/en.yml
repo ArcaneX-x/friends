@@ -3,15 +3,21 @@ en:
     events:
       updated: "Event was successfully updated"
       created: "Event was successfully created"
-      destroyed: "Event was successfully destroyed"
+      destroyed: "Event was successfully deleted"
     users:
       updated: "Users was successfully updated"
       created: "Users was successfully created"
-      destroyed: "Users was successfully destroyed"
+      destroyed: "Users was successfully deleted"
+    comments:
+      destroyed: "Comments was successfully deleted"
+      created: "Comments was successfully created"
+      error: "Comments cannot be created"
   views:
     interaction:
       delete: "Delete"
     event:
       delete: "Event was successfully deleted"
       are_you_sure: "Are you sure you want to delete"
+    comments:
+      destroy_confirm: "Are you sure?"
 
