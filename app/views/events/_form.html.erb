@@ -21,9 +21,10 @@
 
   <div class="d-grid gap-2 col-6 mx-auto">
     <%= f.submit 'Save', class: 'form-button' %>
-    <%= link_to 'Back', :back, class: 'text-center' %>
+    <%= link_to 'Back', current_user, class: 'text-center' %>
   </div>
 <% end %>
 <div class="details"><%= button_to 'Delete', @event, method: :delete,
-                                   form: { data: { turbo_confirm: "are you sure?" } }, class: "btn btn-outline-danger" %>
+                                   onclick: "return confirmDestroy('Are you sure?')",
+                                   class: "btn btn-outline-danger" %>
 </div>

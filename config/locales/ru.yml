@@ -1,0 +1,26 @@
+ru:
+  controllers:
+    events:
+      updated: "Событие успешно обновлено"
+      created: "Событие успешно создано"
+      destroyed: "Событие успешно удалено"
+    users:
+      updated: "Пользователи успешно обновлены"
+      created: "Пользователи успешно созданы"
+      destroyed: "Пользователи успешно удалены"
+    comments:
+      destroyed: "Комментарии успешно удалены"
+      created: "Комментарий успешно создан"
+      error: "Комментарии не могут быть созданы"
+    subscriptions:
+      destroyed: "Подписка успешно удалена"
+      created: "Подписка успешно создана"
+      error: "Подписка не может быть создана"
+  views:
+    interaction:
+      delete: "Удалить"
+    event:
+      delete: "Событие успешно удалено"
+      are_you_sure: "Вы уверены, что хотите удалить"
+    comments:
+      destroy_confirm: "Вы уверены?"

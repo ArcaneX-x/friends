@@ -12,6 +12,10 @@ en:
       destroyed: "Comments was successfully deleted"
       created: "Comments was successfully created"
       error: "Comments cannot be created"
+    subscriptions:
+      destroyed: "Subscription was successfully deleted"
+      created: "Subscription was successfully created"
+      error: "Subscription cannot be created"
   views:
     interaction:
       delete: "Delete"

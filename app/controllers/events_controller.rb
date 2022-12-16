@@ -14,6 +14,11 @@ class EventsController < ApplicationController
   end
 
   def show
+    # authorize @event
+
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
+    # @new_photo = @event.photos.build(params[:photo])
   end
 
   def new
@@ -31,7 +36,9 @@ class EventsController < ApplicationController
       # controllers -> events -> created
       redirect_to @event, notice: I18n.t('controllers.events.created')
     else
+      flash[:alert] = "Please, fill the form"
       render :new
+      flash.discard
     end
   end
 
