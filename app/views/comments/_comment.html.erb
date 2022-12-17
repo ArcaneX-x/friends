@@ -1,0 +1,26 @@
+<div class="d-flex flex-row mt-4">
+  <div class="p-2">
+    <% if comment.user.present? %>
+      <%= render partial: 'users/user', object: comment.user %>
+    <% else %>
+      <p><%= comment.user_name %></p>
+    <% end %>
+  </div>
+  <div class="p-2 align-self-baseline">
+    <div><%= comment.body %></div>
+    <p>(<%= l comment.created_at, format: :short %>)</p>
+  </div>
+  <div class="p-2">
+    <% if current_user_can_edit?(comment) %>
+      <%= button_to(
+            fa_icon('fill'), event_comment_path(comment.event, comment),
+            class: "form-button",
+            style: "padding: 3px 10px",
+            method: :delete,
+            onclick: "return confirmDestroy('Are you sure?')"
+          ) %>
+    <% end %>
+  </div>
+</div>
+
+

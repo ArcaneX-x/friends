@@ -1,0 +1,17 @@
+<span class="subscription">
+  <% if subscription.user.present? %>
+    <%= render partial: 'users/user', object: subscription.user %>
+  <% else %>
+    <em><%= subscription.user_name %></em>
+  <% end %>
+  <% if current_user_can_edit?(subscription) %>
+
+<%= button_to(
+      fa_icon('fill'), event_subscription_path(subscription.event, subscription), class: "form-button",
+      style: "padding: 3px 10px",
+      method: :delete,
+      onclick: "return confirmDestroy('Are you sure')"
+    ) %>
+
+  <% end %>
+</span>
