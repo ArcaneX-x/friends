@@ -10,6 +10,7 @@ gem "importmap-rails"
 gem "devise"
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'pg'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -19,12 +20,3 @@ gem "bootstrap", "~> 5.2.2"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-
-group :production do
-  gem "pg"
-end
-
-group :development, :test do
-  gem "byebug"
-  gem "sqlite3", "~> 1.4"
-end
