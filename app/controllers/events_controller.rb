@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where('datetime > ?', Time.current)
-    @next_event = Event.where('datetime > ?', Time.current + 6.days).first
+    @next_event = Event.where('datetime > ?', Time.current).order(datetime: :asc).first
   end
 
   def show
