@@ -8,6 +8,7 @@ class Subscription < ApplicationRecord
   validates :event, presence: true
   validates :user_name, presence: true, unless: :user_present?
   validates :user_email, format: EMAIL_ADDRESS, unless: :user_present?
+  validate :user_owner, if: :user_present?
 
   # для данного event_id один юзер может подписаться только один раз (если юзер задан)
   validates :user, uniqueness: {scope: :event_id}, if: :user_present?
@@ -27,6 +28,12 @@ class Subscription < ApplicationRecord
       user.email
     else
       super
+    end
+  end
+
+  def user_owner
+    if user_id == event.user_id
+      errors.add(user_name, 'You are owner')
     end
   end
 end

@@ -11,13 +11,6 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  def after_sign_in_path_for(resource)
-    current_user
-  end
-
-  # Вспомогательный метод, возвращает true, если текущий залогиненный юзер
-  # может править указанную модель. Обновили метод — теперь на вход принимаем
-  # event, или «дочерние» объекты
   def current_user_can_edit?(model)
     # Если у модели есть юзер и он залогиненный, пробуем у модели взять .event и
     # если он есть, проверяем его юзера на равенство current_user.
@@ -27,19 +20,25 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  private
+  # private
 
   def default_url_options
     {locale: I18n.locale}
   end
 
-  def extract_locale
-    parsed_locale = current_user.preference.locale
-    I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
+  def set_locale
+    # byebug
+    I18n.locale = extract_locale || I18n.default_locale
   end
 
-  def set_locale
-    I18n.locale = extract_locale || I18n.default_locale
+  def extract_locale
+    if current_user.present?
+    current_user.preference.locale
+    else
+      I18n.default_locale
+    end
+    # current_user.preference.locale ? current_user.present? :
+    # I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
   end
 end
 
