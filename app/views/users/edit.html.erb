@@ -8,24 +8,13 @@
     <% end %>
   </div>
   <div class="row">
-    <div class="col-md-auto">
+    <div class="col-md-auto", style="background-color: <%= current_user.preference.theme %>">
       <h3>Editing profile</h3>
       <%= render 'form' %></br>
       <p><%= link_to 'Change password / Delete account', edit_user_registration_path %></p>
     </div>
     <div class="col">
-      <% if @user.events.any? %>
-        <section id="schedule" class="section-with-bg">
-          <div class="container" data-aos="fade-up">
-              <h3>Events Schedule by <%= @user.name %></h3>
-            <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <%= render partial: 'events/event', collection: @user.events %>
-            </div>
-          </div>
-        </section>
-      <% else %>
-        <h3 class="buffer-top"><%= @user.name %> has not yet created an event.</h3>
-      <% end %>
+      <%= render partial: 'preferences/form' %>
     </div>
   </div>
 </div>

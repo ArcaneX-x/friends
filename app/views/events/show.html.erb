@@ -19,10 +19,10 @@
           <h2>Address: <small><%= link_to @event.address,
                                           "https://yandex.ru/maps/?text=#{@event.address}" %></small></h2>
           <% if current_user_can_edit?(@event) %>
-          <%= link_to 'Back to Profile', current_user, class: "form-button text-center" %>
-            <% else %>
-          <%= link_to 'Back', root_path, class: "form-button text-center" %>
-            <% end %>
+            <%= link_to 'Back to Profile', current_user, class: "form-button text-center" %>
+          <% else %>
+            <%= link_to 'Back', root_path, class: "form-button text-center" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
   <div class="col-md-8">
     <div class="event-comments buffer-top">
       <%= render partial: 'comments/form',
-                 locals: {comment: @new_comment || @event.comments.build} %>
+                 locals: { comment: @new_comment || @event.comments.build } %>
 
       <div class="buffer-both">
         <%= render partial: 'comments/comment',
@@ -49,23 +49,25 @@
       <h4>Зовет:</h4>
       <p><%= render partial: 'users/user', object: @event.user %></p>
     </div>
-    <div class="event-subscriptions">
-      <h4>Пойдут:</h4>
-      <div>
-        <p>
-          <%= render partial: 'subscriptions/subscription',
-                     collection: @event.subscriptions.except(@new_subscription) %>
-        </p>
+    <% if @event.subscriptions.except(@new_subscription).any? %>
+      <div class="event-subscriptions">
+        <h4>Пойдут:</h4>
+        <div>
+          <p>
+            <%= render partial: 'subscriptions/subscription',
+                       collection: @event.subscriptions.except(@new_subscription) %>
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="event-subscription-form">
-      <h4>Я пойду:</h4>
-      <div>
-        <%= render partial: 'subscriptions/form', locals: {
-          subscription: @new_subscription || @event.subscriptions.build
-        } %>
+      <% end %>
+      <div class="event-subscription-form">
+        <h4>Я пойду:</h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
+      </div>
+      </div>
+      </div>

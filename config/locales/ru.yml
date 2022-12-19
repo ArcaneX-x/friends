@@ -24,3 +24,5 @@ ru:
       are_you_sure: "Вы уверены, что хотите удалить"
     comments:
       destroy_confirm: "Вы уверены?"
+  options:
+    title: 'Русская форма'

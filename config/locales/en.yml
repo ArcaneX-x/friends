@@ -24,4 +24,5 @@ en:
       are_you_sure: "Are you sure you want to delete"
     comments:
       destroy_confirm: "Are you sure?"
-
+  options:
+    title: 'En form'

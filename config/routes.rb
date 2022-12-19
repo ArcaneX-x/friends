@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  root "events#index"
-  devise_for :users
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    root "events#index"
+    devise_for :users
 
-  resources :settings
-  resources :events do
-    resources :comments, only: [:create, :destroy]
-    resources :subscriptions, only: [:create, :destroy]
+    resources :preferences, only: [:update]
+    resources :events do
+      resources :comments, only: [:create, :destroy]
+      resources :subscriptions, only: [:create, :destroy]
+    end
+    resources :users, only: [:show, :edit, :update]
   end
-  resources :users, only: [:show, :edit, :update]
 end
