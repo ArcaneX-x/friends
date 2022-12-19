@@ -1,0 +1,19 @@
+<h1><%= t 'options.title' %></li></h1>
+<%= form_for(current_user.preference) do |f| %>
+  <div class="mb-3">
+    <%= f.label :theme, class: "form-label" %>
+    <%= f.color_field :theme, required: true %>
+  </div>
+  <div class="mb-3">
+    <%= f.select :locale, options_for_select([['en', 'en'],
+                                              ['ru', 'ru']],
+                                             selected: current_user.preference.locale),
+                 {}, { class: "form form-select form-control" } %>
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%= f.submit 'Save', class: 'form-button' %>
+  </div>
+<% end %>
+
+
+
