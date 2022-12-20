@@ -59,15 +59,18 @@
           </p>
         </div>
       </div>
-      <% end %>
-      <div class="event-subscription-form">
+    <% end %>
+    <div class="event-subscription-form">
+      <% if current_user_can_edit?(@event) %>
+      <% else %>
         <h4>Я пойду:</h4>
         <div>
           <%= render partial: 'subscriptions/form', locals: {
             subscription: @new_subscription || @event.subscriptions.build
           } %>
         </div>
+        </div>
+      <% end %>
       </div>
-      </div>
-      </div>
-      </div>
+</div>
+</div>

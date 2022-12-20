@@ -30,6 +30,6 @@ class User < ApplicationRecord
   end
 
   def set_profile
-    Preference.create(user_id: self.id, payload: {theme: '#ffffff', locale: 'en'})
+    Preference.create(user_id: self.id, payload: {theme: '#060c22', locale: 'en'})
   end
 end

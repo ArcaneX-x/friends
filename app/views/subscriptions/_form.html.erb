@@ -1,4 +1,11 @@
 <%= form_for [@event, subscription] do |f| %>
+  <% if subscription.errors.any? %>
+    <ul>
+      <% subscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <% unless user_signed_in? %>
     <div class="form-group">
       <%= f.label :user_name %>

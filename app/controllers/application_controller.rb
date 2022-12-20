@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     )
   end
 
+  def after_sign_in_path_for(resource)
+    current_user
+  end
+
   def current_user_can_edit?(model)
     # Если у модели есть юзер и он залогиненный, пробуем у модели взять .event и
     # если он есть, проверяем его юзера на равенство current_user.

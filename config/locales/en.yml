@@ -26,3 +26,14 @@ en:
       destroy_confirm: "Are you sure?"
   options:
     title: 'En form'
+  form:
+    errors:
+      user_owner: ' Owner cannot be subscriber!'
+#ru:
+#  activerecord:
+#    errors:
+#      models:
+#        subscription:
+#          attributes:
+#            user_email:
+#              user_exists: your text here
