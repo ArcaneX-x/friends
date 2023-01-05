@@ -18,6 +18,7 @@ class User < ApplicationRecord
             format: EMAIL_ADDRESS
 
   after_commit :link_subscriptions, :set_profile, on: :create
+  mount_uploader :avatar, AvatarUploader
 
   private
 

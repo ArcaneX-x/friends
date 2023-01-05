@@ -25,7 +25,7 @@ en:
     comments:
       destroy_confirm: "Are you sure?"
   options:
-    title: 'En form'
+    title: 'Settings'
   form:
     errors:
       user_owner: ' Owner cannot be subscriber!'

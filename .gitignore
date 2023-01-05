@@ -11,6 +11,8 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
+public/uploads
+.byebug_history
 
 # Ignore all logfiles and tempfiles.
 /log/*

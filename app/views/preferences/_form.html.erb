@@ -1,8 +1,9 @@
-<h1><%= t 'options.title' %></li></h1>
+<div class="section-header">
+<h2><%= t 'options.title' %></li></h2>
+</div>
 <%= form_for(current_user.preference) do |f| %>
   <div class="mb-3">
     <%= f.label "Theme", class: "form-label" %>
-    <%#= f.color_field :theme, required: true %>
     <%= f.select :theme, options_for_select([['Dark', '#060c22'],
                                              ['Blue', '#0f236d']],
                                             selected: current_user.preference.theme),

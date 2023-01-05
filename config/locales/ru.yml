@@ -25,7 +25,7 @@ ru:
     comments:
       destroy_confirm: "Вы уверены?"
   options:
-    title: 'Русская форма'
+    title: 'Настройки'
   form:
     errors:
       user_owner: ' не может подписаться на свое событие!'
