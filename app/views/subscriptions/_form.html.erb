@@ -1,16 +1,21 @@
 <%= form_for [@event, subscription] do |f| %>
+  <% if subscription.errors.any? %>
+    <ul>
+      <% subscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <% unless user_signed_in? %>
-    <div class="form-group">
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+    <div class="form-group mb-3">
+      <%= f.text_field :user_name, class: 'form-control', placeholder: "User name" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :user_email %>
-      <%= f.text_field :user_email, class: 'form-control' %>
+    <div class="form-group mb-3">
+      <%= f.text_field :user_email, class: 'form-control', placeholder: "Email" %>
     </div>
   <% end %>
-  <div class="actions">
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%= f.submit 'Submit', class: 'form-button btn-sm' %>
   </div>
 <% end %>

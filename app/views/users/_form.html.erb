@@ -1,15 +1,18 @@
 <%= form_for @user, html: { multipart: true } do |f| %>
-    <%= render partial: 'partials/form_errors', locals: { model: @user } %>
-    <div class="mb-3">
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Your name' %>
-    </div>
-    <div class="mb-3">
-      <%= f.text_field :email, class: 'form-control', placeholder: 'Your email' %>
-    </div>
-    <div class="mb-3">
-      <%= f.submit "Update", class: "form-button text-center" %>
-      <%= link_to 'Back', :back %>
-    </div>
+  <%= render partial: 'partials/form_errors', locals: { model: @user } %>
+  <div class="mb-3">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Your name' %>
+  </div>
+  <div class="mb-3">
+    <%= f.text_field :email, class: 'form-control', placeholder: 'Your email' %>
+  </div>
+  <div class="mb-3">
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= f.file_field :avatar, placeholder: 'Upload your avatar' %>
+  </div>
+  <div class="mb-3">
+    <%= f.submit "Update", class: "form-button text-center" %>
+  </div>
 <% end %>
 
 

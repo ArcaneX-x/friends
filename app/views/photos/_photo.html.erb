@@ -1,0 +1,14 @@
+  <div class="p-2">
+  <%= link_to image_tag(photo.photo.thumb.url, class: "img-fluid"),
+              photo.photo.url, class: 'glightbox',
+              data: { gall: "venue-gallery" } %>
+    <% if current_user_can_edit?(photo) %>
+      <%= button_to(
+            fa_icon('fill'), event_photo_path(photo.event, photo),
+            class: "form-button",
+            style: "padding: 3px 10px",
+            method: :delete,
+            onclick: "return confirmDestroy('Are you sure?')"
+          ) %>
+    <% end %>
+  </div>

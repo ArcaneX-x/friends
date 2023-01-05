@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
-  has_one :setting, dependent: :destroy
+  has_one :preference, dependent: :destroy
 
   before_validation :set_name, on: :create
 
@@ -17,7 +17,8 @@ class User < ApplicationRecord
             uniqueness: true,
             format: EMAIL_ADDRESS
 
-  after_commit :link_subscriptions, on: :create
+  after_commit :link_subscriptions, :set_profile, on: :create
+  mount_uploader :avatar, AvatarUploader
 
   private
 
@@ -27,5 +28,9 @@ class User < ApplicationRecord
 
   def set_name
     self.name = "Anonymous №#{rand(777)}" if self.name.blank?
+  end
+
+  def set_profile
+    Preference.create(user_id: self.id, payload: {theme: '#060c22', locale: 'en'})
   end
 end

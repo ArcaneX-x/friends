@@ -24,4 +24,16 @@ en:
       are_you_sure: "Are you sure you want to delete"
     comments:
       destroy_confirm: "Are you sure?"
-
+  options:
+    title: 'Settings'
+  form:
+    errors:
+      user_owner: ' Owner cannot be subscriber!'
+#ru:
+#  activerecord:
+#    errors:
+#      models:
+#        subscription:
+#          attributes:
+#            user_email:
+#              user_exists: your text here

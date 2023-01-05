@@ -1,10 +1,13 @@
 <!-- ======= Common Header ======= -->
-<header id="header" class="d-flex align-items-center header-inner">
+<% if user_signed_in? %>
+  <header id="header" class="d-flex align-items-center header-inner", style="background-color: <%= current_user.preference.theme %>">
+<% else %>
+  <header id="header" class="d-flex align-items-center header-inner">
+<% end %>
   <div class="container-fluid container-xxl d-flex align-items-center">
-
     <div id="logo" class="me-auto">
       <%#= link_to image_tag('logo.png'), root_path, class:'scrollto' %>
-       <h1 style="font-size: 18px"><a href="/">The<span>Event</span></a></h1>
+       <h1 style="font-size: 18px"><a href="<%= root_path %>/">The<span>Event</span></a></h1>
     </div>
 
 <!--    <nav id="navbar" class="navbar order-last order-lg-0">-->

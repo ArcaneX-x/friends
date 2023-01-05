@@ -1,17 +1,13 @@
 <%= form_for [@event, comment] do |f| %>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-  </div>
-
   <% unless user_signed_in? %>
-    <div class="form-group">
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+    <div class="form-group mb-3">
+      <%= f.text_field :user_name, class: 'form-control', placeholder: "User name" %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+  <div class="form-group mb-3">
+    <%= f.text_field :body, class: 'form-control', placeholder: "Leave a short comment here" %>
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%= f.submit 'Post', class: 'form-button btn-sm' %>
   </div>
 <% end %>

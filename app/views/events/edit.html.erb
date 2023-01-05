@@ -1,21 +1,21 @@
-<!-- ======= Event Details Section ======= -->
-<section id="contact" class="section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>Editing Event</h2>
-      <p>Change whatever you want</p>
+<% content_for :title do %>Edit Event: <%= @event.title %>
+<% end %>
+<div class="container px-4 p-5 text-center">
+  <div class="row align-items-start">
+    <div class="col">
     </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <%#= image_tag 'speakers/1.jpg', class:'img-fluid', alt: "#{@user.name} photo" %>
+    <div class="col">
+      <div class="section-header">
+        <h2>Editing Event</h2>
+        <%= link_to 'Back', @event %>
       </div>
-
-      <div class="col-md-6">
-        <div class="details">
-          <%= render 'form' %>
-        </div>
-      </div>
+      <%= render 'form' %></br>
+    </div>
+    <div class="col">
     </div>
   </div>
-</section>
+</div>
+
+
+
+

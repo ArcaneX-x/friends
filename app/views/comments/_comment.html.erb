@@ -1,16 +1,17 @@
-<div class="d-flex flex-row mt-4">
-  <div class="p-2">
-    <% if comment.user.present? %>
-      <%= render partial: 'users/user', object: comment.user %>
-    <% else %>
-      <p><%= comment.user_name %></p>
-    <% end %>
-  </div>
-  <div class="p-2 align-self-baseline">
-    <div><%= comment.body %></div>
-    <p>(<%= l comment.created_at, format: :short %>)</p>
-  </div>
-  <div class="p-2">
+<div class="col-md-6">
+  <div class="d-flex flex-row mt-4">
+    <div class="p-2">
+      <% if comment.user.present? %>
+        <%= render partial: 'users/user', object: comment.user %>
+      <% else %>
+        <%= image_tag 'avatar-thumb.png', class: 'img-icon' %>
+        <%= comment.user_name %>
+      <% end %>
+    </div>
+    <div class="p-2 align-self-baseline">
+      <div><%= comment.body %></div>
+      <p>(<%= l comment.created_at, format: :short %>)</p>
+    </div>
     <% if current_user_can_edit?(comment) %>
       <%= button_to(
             fa_icon('fill'), event_comment_path(comment.event, comment),
@@ -22,5 +23,3 @@
     <% end %>
   </div>
 </div>
-
-
