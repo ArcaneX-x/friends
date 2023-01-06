@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= form_with model: @event do |f| %>
   <div class="mb-3">
     <%= f.label :title, class: "form-label" %>
     <%= f.text_field :title, class: 'form-control' %>
@@ -11,7 +11,7 @@
 
   <div class="mb-3">
     <%= f.label :datetime, class: "form-label" %>
-    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
+    <%= f.datetime_field :datetime, type:"datetime-local", class:"form-control" %>
   </div>
 
   <div class="mb-3">
@@ -21,7 +21,6 @@
 
   <div class="d-grid gap-2 col-6 mx-auto">
     <%= f.submit 'Save', class: 'form-button' %>
-    <%#= link_to 'Back', current_user, class: 'text-center' %>
   </div>
 <% end %>
 </br>

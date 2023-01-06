@@ -1,26 +1,22 @@
 <% content_for :title do %>Edit Profile <%= @user.name %>
 <% end %>
-<div class="container px-4 p-5 text-center">
-<!--  <div class="container text-center">-->
-    <div class="row align-items-start">
-      <div class="col">
+<div class="container px-4 p-5">
+  <div class="row text-center">
+    <div class="col gx-0"></div>
+    <div class="col-md-6">
+      <div class="section-header">
+        <h2>Editing Profile</h2>
+        <% if @user == current_user %>
+          <%= link_to 'Back', :back %>
+        <% end %>
       </div>
-      <div class="col">
-        <div class="section-header">
-          <h2>Editing Profile</h2>
-          <% if @user == current_user %>
-            <%= link_to 'Back', :back %>
-          <% end %>
-        </div>
-        <%= render 'form' %></br>
-        <p><%= link_to 'Change password / Delete account', edit_user_registration_path %></p>
-        <%= render partial: 'preferences/form' %>
-      </div>
-      <div class="col">
-      </div>
+      <%= render 'form' %><br>
+      <p><%= link_to 'Change password / Delete account', edit_user_registration_path %></p>
+      <%= render partial: 'preferences/form' %>
     </div>
+    <div class="col"></div>
   </div>
-<!--</div>-->
+</div>
 
 
 

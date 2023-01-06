@@ -1,18 +1,16 @@
 <% content_for :title do %>Edit Event: <%= @event.title %>
 <% end %>
-<div class="container px-4 p-5 text-center">
-  <div class="row align-items-start">
-    <div class="col">
-    </div>
-    <div class="col">
+<div class="container px-4 p-5">
+  <div class="row text-center">
+    <div class="col gx-0"></div>
+    <div class="col-md-6">
       <div class="section-header">
         <h2>Editing Event</h2>
         <%= link_to 'Back', @event %>
       </div>
       <%= render 'form' %></br>
     </div>
-    <div class="col">
-    </div>
+    <div class="col"></div>
   </div>
 </div>
 
